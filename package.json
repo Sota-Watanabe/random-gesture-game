@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 4000",
     "build": "next build",
-    "export": "next export && touch ./out/.nojekyll",
+    "export": "next export && touch ./out/_next/.nojekyll",
     "start": "next start",
     "lint": "eslint --fix -c ./.eslintrc.json './**/*.{ts,tsx}'",
     "lint:ci": "eslint -c ./.eslintrc.json './**/*.{ts,tsx}'"
