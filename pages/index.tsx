@@ -39,29 +39,31 @@ export default function Home() {
           </button>
         )}
       </div>
-      <div className="flex gap-2 mt-10 justify-center">
-        <button
-          type="button"
-          data-mdb-ripple="true"
-          data-mdb-ripple-color="light"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={success}
-        >
-          伝わった！
-        </button>
-        <button
-          disabled={secs !== 0}
-          className={`bg-red-500 ${
-            secs === 0 ? "hover:bg-red-700" : ""
-          } text-white font-bold py-2 px-4 rounded`}
-          onClick={() => setNewTheme()}
-        >
-          パス！
-        </button>
-      </div>
+      {theme !== "" && (
+        <div className="flex gap-2 mt-10 justify-center">
+          <button
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={success}
+          >
+            伝わった！
+          </button>
+          <button
+            disabled={secs !== 0}
+            className={`bg-red-500 ${
+              secs === 0 ? "hover:bg-red-700" : "opacity-50"
+            } text-white font-bold py-2 px-4 rounded`}
+            onClick={() => setNewTheme()}
+          >
+            パス！
+          </button>
+        </div>
+      )}
       <p className="mt-4">{secs}秒後にパスできます</p>
       <div className="m-16">
-        <p className="m-4">獲得ポイント</p>
+        <p className="text-lg">獲得ポイント</p>
         <p className="text-xl">{point}</p>
       </div>
     </div>
