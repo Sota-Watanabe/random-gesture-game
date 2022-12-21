@@ -6,6 +6,7 @@ export default function Home() {
       <h1 className="text-1xl md:text-6xl text-yellow-400">
         貴様！見ているなッ！
       </h1>
+      <a href="/ababa"></a>
       <p>fdsfa</p>
     </>
   );
