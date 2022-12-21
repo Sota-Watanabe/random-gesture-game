@@ -3,14 +3,21 @@ import { themeList } from "public/theme-list";
 
 export default function Home() {
   console.log(themeList);
-  const [theme, setTheme] = useState("お題");
+  const [theme, setTheme] = useState("");
   const [point, setPoint] = useState(0);
+  const setNewTheme = () => {
+    const newTheme = themeList[Math.floor(Math.random() * themeList.length)];
+    setTheme(newTheme);
+  };
   return (
     <div className="m-8 text-center">
       <div>
         <p className="mb-8">お題は？</p>
         <p className="text-xl">{theme}</p>
-        <button className="mt-12 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button
+          className="mt-12 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          onClick={setNewTheme}
+        >
           これだ！
         </button>
       </div>
